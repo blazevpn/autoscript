@@ -62,7 +62,7 @@ apt-get install figlet
 echo "clear" >> .bashrc
 echo 'figlet -k "$HOSTNAME"' >> .bashrc
 echo 'echo -e "Selamat datang ke server $HOSTNAME"' >> .bashrc
-echo 'echo -e "Script mod by Amirul Mukminin"' >> .bashrc
+echo 'echo -e "Script mod by Aiman Amir"' >> .bashrc
 echo 'echo -e "Taip menu untuk menampilkan senarai perintah yang tersedia"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
