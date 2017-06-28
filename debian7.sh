@@ -12,9 +12,8 @@ MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 #regenerate hostkey
-sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
-sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
-sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+rm -r /etc/ssh*key
+dpkg-reconfigure openssh-server
 
 # go to root
 cd
@@ -191,7 +190,7 @@ echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
 echo "menu (Senarai perintah)"  | tee -a log-install.txt
-echo "usernew (Membuat Akun SSH)"  | tee -a log-install.txt
+echo "usernew (Membuat Akaun SSH)"  | tee -a log-install.txt
 echo "trial (Membuat Akaun Trial)"  | tee -a log-install.txt
 echo "hapus (Menghapus Akaun SSH)"  | tee -a log-install.txt
 echo "login (Semak login user)"  | tee -a log-install.txt
