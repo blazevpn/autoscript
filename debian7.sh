@@ -146,9 +146,9 @@ wget -O trial "https://github.com/blazevpn/autoscript/blob/master/trial.sh"
 wget -O hapus "https://github.com/blazevpn/autoscript/blob/master/hapus.sh"
 wget -O login "https://github.com/blazevpn/autoscript/blob/master/user-login.sh"
 wget -O member "https://github.com/blazevpn/autoscript/commit/893dda0e47a14d77d550aa4cd2d7aa1b465d824d"
-wget -O resvis "https://github.com/blazevpn/autoscript/commit/39247af1733f52578014f583c44ac546c6fd5fc7"
-wget -O speedtest "https://github.com/blazevpn/autoscript/commit/143f34997329236a3d1a27668dfa76ae1d4da2d4"
-wget -O about "https://github.com/blazevpn/autoscript/commit/eaee66ab28d5326569d6cf90dd1236c3d2fcf733"
+wget -O resvis "https://github.com/blazevpn/autoscript/blob/master/resvis.sh"
+wget -O speedtest "https://github.com/blazevpn/autoscript/blob/master/speedtest_cli.py"
+wget -O about "https://github.com/blazevpn/autoscript/blob/master/about.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
