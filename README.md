@@ -17,7 +17,7 @@ Feature script Auto-Install :
 - Script speedtest : speedtest VPS
 - Script about : informasi tentang script auto install
 
-Sebelum script Auto Install berikut diinstall, pastikan bahwa VPS Anda mempunyai OS Debian 7 32 Bit. Pastikan juga VPS masih fresh, belum diinstall apapun.
+Sebelum script Auto Install berikut diinstall, pastikan bahwa VPS Anda mempunyai OS Debian 7 32 Bit. Pastikan juga VPS masih fresh.
 
 Berikut adalah langkah-langkah eksekusi Script Auto Install untuk Debian 7 32 Bit :
 
@@ -27,13 +27,13 @@ apt-get install ca-certificates
 
 2. Download script dengan perintah :
 
-wget https://gist.githubusercontent.com/kitketxss/32db17d26ba9968b887b1846548e24bd/raw/bea9a3a15493a6debec50748927fa388508d65d7/debian7.sh
+wget https://github.com/blazevpn/autoscript/blob/master/debian7.sh
 
 3. Tetapkan permission dengan perintah :
 
 chmod +x debian7.sh
 
-4. Terakhir, execute script dengan perintah :
+4. Akir sekali, execute script dengan perintah :
 
 ./debian7.sh
 
