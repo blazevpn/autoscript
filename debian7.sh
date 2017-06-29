@@ -5,6 +5,9 @@
 # ==================================================
 # 
 
+#install sertifikat
+apt-get install ca-certificates
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
