@@ -5,7 +5,7 @@
 # ==================================================
 # 
 
-#install sertifikat
+# install sertifikat
 apt-get install ca-certificates
 
 # initialisasi var
@@ -92,7 +92,7 @@ wget -O /etc/network/if-up.d/iptables "https://raw.github.com/blazevpn/autoscrip
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
-#konfigurasi openvpn
+# konfigurasi openvpn
 cd /etc/openvpn/
 wget -O /etc/openvpn/client.ovpn "https://raw.github.com/blazevpn/autoscript/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
@@ -107,8 +107,8 @@ fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
-
 cd
+
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
@@ -123,7 +123,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-
 cd
 
 # install fail2ban
