@@ -123,6 +123,9 @@ service dropbear restart
 
 cd
 
+# install fail2ban
+apt-get -y install fail2ban;service fail2ban restart
+
 # install squid3
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://github.com/blazevpn/autoscript/blob/master/squid3.conf"
