@@ -36,7 +36,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://github.com/blazevpn/autoscript/blob/master/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.github.com/blazevpn/autoscript/blob/master/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 wget "http://www.webmin.com/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
@@ -72,37 +72,37 @@ echo 'echo -e ""' >> .bashrc
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://github.com/blazevpn/autoscript/blob/master/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.github.com/blazevpn/autoscript/blob/master/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by Aiman Amir | 081515292117</pre>" > /home/vps/public_html/index.html
 wget -O /etc/nginx/conf.d/vps.conf "https://github.com/blazevpn/autoscript/blob/master/vps.conf"
 service nginx restart
 
 # install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://github.com/blazevpn/autoscript/blob/master/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/blazevpn/autoscript/blob/master/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://github.com/blazevpn/autoscript/blob/master/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.github.com/blazevpn/autoscript/blob/master/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 iptables-save > /etc/iptables_yg_baru_dibikin.conf
-wget -O /etc/network/if-up.d/iptables "https://github.com/blazevpn/autoscript/blob/master/iptables"
+wget -O /etc/network/if-up.d/iptables "https://raw.github.com/blazevpn/autoscript/blob/master/iptables"
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
 #konfigurasi openvpn
 cd /etc/openvpn/
-wget -O /etc/openvpn/client.ovpn "https://github.com/blazevpn/autoscript/blob/master/client-1194.conf"
+wget -O /etc/openvpn/client.ovpn "https://raw.github.com/blazevpn/autoscript/blob/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
 cp client.ovpn /home/vps/public_html/
 
 cd
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://github.com/blazevpn/autoscript/blob/master/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/blazevpn/autoscript/blob/master/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "https://github.com/blazevpn/autoscript/blob/master/badvpn-udpgw"
+  wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/blazevpn/autoscript/blob/master/badvpn-udpgw"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -131,7 +131,7 @@ apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://github.com/blazevpn/autoscript/blob/master/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://raw.github.com/blazevpn/autoscript/blob/master/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -146,14 +146,14 @@ service webmin restart
 # download script
 cd /usr/bin
 wget -O menu "https://github.com/blazevpn/autoscript/blob/master/menu.sh"
-wget -O usernew "https://github.com/blazevpn/autoscript/blob/master/usernew.sh"
-wget -O trial "https://github.com/blazevpn/autoscript/blob/master/trial.sh"
-wget -O hapus "https://github.com/blazevpn/autoscript/blob/master/hapus.sh"
-wget -O login "https://github.com/blazevpn/autoscript/blob/master/user-login.sh"
-wget -O member "https://github.com/blazevpn/autoscript/commit/893dda0e47a14d77d550aa4cd2d7aa1b465d824d"
-wget -O resvis "https://github.com/blazevpn/autoscript/blob/master/resvis.sh"
-wget -O speedtest "https://github.com/blazevpn/autoscript/blob/master/speedtest_cli.py"
-wget -O about "https://github.com/blazevpn/autoscript/blob/master/about.sh"
+wget -O usernew "https://raw.github.com/blazevpn/autoscript/blob/master/usernew.sh"
+wget -O trial "https://raw.github.com/blazevpn/autoscript/blob/master/trial.sh"
+wget -O hapus "https://raw.github.com/blazevpn/autoscript/blob/master/hapus.sh"
+wget -O login "https://raw.github.com/blazevpn/autoscript/blob/master/user-login.sh"
+wget -O member "https://raw.github.com/blazevpn/autoscript/commit/893dda0e47a14d77d550aa4cd2d7aa1b465d824d"
+wget -O resvis "https://raw.github.com/blazevpn/autoscript/blob/master/resvis.sh"
+wget -O speedtest "https://raw.github.com/blazevpn/autoscript/blob/master/speedtest_cli.py"
+wget -O about "https://raw.github.com/blazevpn/autoscript/blob/master/about.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
