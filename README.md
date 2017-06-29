@@ -18,3 +18,7 @@ Feature script Auto-Install :
 - Script about : informasi tentang script auto install
 
 Sebelum script Auto Install berikut diinstall, pastikan bahwa VPS Anda mempunyai OS Debian 7 32 Bit. Pastikan juga VPS masih fresh.
+
+Auto-Install Script :-
+
+apt-get install wget && wget https://raw.githubusercontent.com/blazevpn/autoscript/master/debian7.sh && ./debian7.sh
