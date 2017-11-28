@@ -144,7 +144,7 @@ service webmin restart
 
 # download script
 cd /usr/bin
-wget -O menu "https://github.com/blazevpn/autoscript/master/menu.sh"
+wget -O menu "https://raw.github.com/blazevpn/autoscript/master/menu.sh"
 wget -O usernew "https://raw.github.com/blazevpn/autoscript/master/usernew.sh"
 wget -O trial "https://raw.github.com/blazevpn/autoscript/master/trial.sh"
 wget -O hapus "https://raw.github.com/blazevpn/autoscript/master/hapus.sh"
